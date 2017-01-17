@@ -1,5 +1,5 @@
 function setup() {
-  var Canvas= createCanvas(450, 1200); 
+  var Canvas= createCanvas(320, 1200); 
     Canvas.parent('sketchContainer');
   background(100, 0);
 }
