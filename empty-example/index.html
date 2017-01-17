@@ -1,0 +1,299 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+    
+   <script language="javascript" type="text/javascript" src="addons/p5.js"></script>    
+    
+    <script language="javascript" src="addons/p5.dom.js"></script>
+    <script language="javascript" type="text/javascript" src="sketch.js"></script>
+  <!-- uncomment lines below to include extra p5 libraries -->
+
+
+  <!--<script language="javascript" src="../addons/p5.sound.js"></script>-->
+  
+  <!-- this line removes any default padding and style. you might only need one of these values set. -->
+        
+<title>Retracing South Water</title>
+<style>
+@font-face {
+    font-family: 'Atlas Typewriter';
+    src: "AtlasTypewriter-Regular.otf";
+    font-family:'Atlas Typewriter';
+    src: "atlas_typewriter_bold.otf";
+    font-family:'Surveyor Display'
+    src: "SurveyorDisplay-Book.otf";
+}
+        
+        
+.body {
+                position:fixed;
+width: 100vw; height: 11in;
+background: white;
+background-size: cover;
+overflow: hidden;
+}
+        
+            #image {
+                margin: auto;
+                width: 95%;
+                border: none;
+                margin-top: 8px;
+                margin-left:16px;
+                padding: 8px;
+                z-index: 0;
+                }
+            .textinput {
+                position: absolute;
+                left: 522px;
+                top: 246px;
+                right: 50px;
+                bottom: 500px;
+                z-index: 2px;
+            }
+            
+            textarea:focus {
+                outline: none;
+            }
+    
+            
+            textarea {
+             margin: 10;
+             width: 272px;
+             height: 580px;
+             font-family: "Atlas Typewriter";
+             font-size: 8.5pt;
+             line-height: 13pt;
+             color: blue;
+             resize: none;
+             border: none;
+            background-color: transparent;
+            }
+            
+            
+            h2 {
+            position: absolute;
+            left: 514px;
+            top: 22px;
+            color: black;
+            font-family: "Atlas Typewriter";
+            font-size:28pt;
+            line-height: 1.25em;
+            }
+            
+            .subtitle {
+            position: absolute;
+            left: 514px;
+            top: 896px;
+            color: black;
+            font-family: "Atlas Typewriter";
+            font-size: 8.5pt;
+            font-weight: 500;
+            line-height: 1.6em;
+            }
+            
+            
+            p {
+            position: absolute;
+            left: 514px;
+            top: 921px;
+            width: 295px;
+            height: 25px;
+            color: black;
+            font-family: "Atlas Typewriter";
+            font-size: 8.5pt;
+            line-height: 13pt;
+            }
+            
+            .instructionbox {
+            position: fixed;
+            left: 990;
+            top: -20;    
+            width: 6.2in;
+            height: 11in;
+            border: 2.5px dashed blue;
+            margin-top: 80px;
+            padding-right: 100px;
+            z-index: 2;
+            background-color: white;
+            }
+                
+            h1 {
+            font-family: "Atlas Typewriter";
+            margin-top: 38px;
+            margin-left: 85px;
+            font-size: 60pt;
+            line-height: 1.25em;
+            color: blue;
+            text-align: left;
+            }
+            
+            
+           ol {
+            font-family: "Atlas Typewriter";
+            margin-left: 52px;
+            color: blue;
+            font-size: 16px;
+            text-align: left;
+            line-height: 1.5em;
+            margin-right: 33px;
+            }
+            
+            
+            button {
+            float: left;
+            margin-left: 58px;
+            margin-top: 73px;
+            width: 200px;
+            height: 100px;
+            background-color: blue;
+            border: 1px solid blue;
+            color: white;
+            font-family: "Atlas Typewriter";
+            font-size: 40pt;
+            }
+            
+   
+            .cmdr {
+            position: fixed;
+            margin-top: 100px;
+            margin-left: 1740px;
+            font-size: 16pt;
+            font-family: "Atlas Typewriter";
+            font-weight: 500;
+            text-align: left;
+            line-height: 1.2em;
+            color: blue;
+            text-decoration: underline;
+                
+                z-index: 3;
+            width: 80px;
+            }
+    
+    
+            .symbols {
+            position: fixed;
+            margin-top: 470px;
+            margin-left: 1740px;
+            font-size: 16pt;
+            font-family: "Atlas Typewriter";
+            line-height: 1.2em;
+            font-weight: 500;
+            text-align: left;
+            color: blue;
+            text-decoration: underline;
+            z-index: 3;
+            width: 80px;
+            }
+    
+            .mouseHold {
+            position: fixed;
+            margin-top: 910px;
+            margin-left: 1740px;
+            font-size: 16pt;
+            font-family: "Atlas Typewriter";
+            line-height: 1.2em;
+            font-weight: 500;
+            text-align: left;
+            color: blue;
+            text-decoration: underline;
+            z-index: 3;
+            width: 80px;
+            }
+            
+             .instructionsP p {
+            position: fixed;
+            font-family: "Atlas Typewriter";
+            top:895px;
+            left: 1084px;
+            padding: 20px;
+            font-size: 25pt;
+            line-height: 1.4em;
+            width: 130px;
+            height: 90px;
+            color: blue;
+            text-align: left;
+            border: 3px solid blue;
+            background-color: white;
+            }
+    
+            
+            #sketchContainer {
+                position:fixed;
+                left:0;
+                right:0;
+                top:0;
+                z-index:0;
+                width: 450;
+                height: 1200;
+                background:transparent;
+                overflow: visible;
+            }
+            
+</style>    
+    
+    
+    
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        
+        
+    
+    
+    
+    
+</head>
+
+<body>
+
+    
+<div id="sketchContainer"></div>
+    
+         <div class="textinput">
+        <textarea rows="30" cols="38">
+Type out your memory here.
+       </textarea>
+           </div>
+     
+    <div class="shoulder">
+                <h3 class="cmdr">CMD+R to start new map</h3>
+        <h3 class="symbols">Map:<br>Press 'a' for circle, 'x' for cross</h3>
+            </div>
+    
+        <h3 class="mouseHold">Hold down to draw a line</h3>
+            </div>
+              
+           
+        <div id="image">
+            <img src="Map_updatedv3.png" style="width:8.8in; height:11.5in;">
+            <h2>Retracing<br>South Water<br>Street</h2>
+            <p class="subtitle">
+            A Memory Map Archive:
+            </p>
+            <p>As a passageway of transition between downtown Providence and Fox Point, South Water Street is riddled with the experiences, feelings, and memories of various travellers. Each map contains a digitally drawn path to a certain event on Southwater Street remembered by each participant, added as an addition to the memory archive.</p>
+          <div class="instructionbox">
+            
+            <h1>Add<br>to <br>Memory Archive:<br></h1>
+              <ol>
+              <br>
+              <li>Envision one specific memory of walking down South Water Street.</li>
+            <br>
+              <li>On the map, draw a line representing what you remember of your path of motion.</li>  
+            <br>
+              <li>Mark out one or more specific locations where a certain event occurred. Type out your story in the box.</li>
+                  <br><li>Print out your map and add to the stack. You may take another map with you.</li>
+            
+              <div class="instructionsP"><p>Print: CMD+P</p></div>
+            
+           
+           <!--PRINT
+           <script>$("#print-iframe").get(0).contentWindow.print();</script>
+        -->   
+
+           
+           <!--PRINT
+           <script>$("#print-iframe").get(0).contentWindow.print();</script>
+        -->       
+
+
+    
+</body>
+</html>
